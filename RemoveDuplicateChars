@@ -1,0 +1,38 @@
+Here’s a **Java program** to remove duplicate characters from the given string `"automation"` and return `"automin"`:  
+
+```java
+import java.util.LinkedHashSet;
+
+public class RemoveDuplicateCharacters {
+    public static void main(String[] args) {
+        String input = "automation";
+        String output = removeDuplicates(input);
+        System.out.println("Output: " + output);
+    }
+
+    public static String removeDuplicates(String input) {
+        StringBuilder result = new StringBuilder();
+        LinkedHashSet<Character> seen = new LinkedHashSet<>();
+
+        for (char c : input.toCharArray()) {
+            if (!seen.contains(c)) {
+                seen.add(c);
+                result.append(c);
+            }
+        }
+        return result.toString();
+    }
+}
+```
+
+### **Explanation:**  
+✔ **Uses `LinkedHashSet<Character>`** → Preserves insertion order and removes duplicates.  
+✔ **Iterates through the string** → Adds only unique characters to the result.  
+✔ **Efficient approach** → Runs in **O(n) time complexity**.  
+
+### **Output:**  
+```
+Output: automin
+```
+
+This ensures that **each character appears only once** while keeping their original order. 
