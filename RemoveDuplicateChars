@@ -7,19 +7,21 @@ public class RemoveDuplicateCharacters {
     public static void main(String[] args) {
         String input = "automation";
         String output = removeDuplicates(input);
-        System.out.println("Output: " + output);
+        System.out.println("Output: " + output); // Output: automin
     }
 
     public static String removeDuplicates(String input) {
-        StringBuilder result = new StringBuilder();
-        LinkedHashSet<Character> seen = new LinkedHashSet<>();
+        LinkedHashSet<Character> set = new LinkedHashSet<>();
 
-        for (char c : input.toCharArray()) {
-            if (!seen.contains(c)) {
-                seen.add(c);
-                result.append(c);
-            }
+        for (int i = 0; i < input.length(); i++) {
+            set.add(input.charAt(i)); // Adds characters to set
         }
+
+        StringBuilder result = new StringBuilder();
+        for (Character ch : set) {
+            result.append(ch); // Appends unique characters
+        }
+
         return result.toString();
     }
 }
