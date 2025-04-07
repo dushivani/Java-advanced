@@ -1,6 +1,8 @@
 Here’s a **Java program** to remove duplicate characters from the given string `"automation"` and return `"automin"`:  
 
 ```java
+
+/* Approach 1
 import java.util.LinkedHashSet;
 
 public class RemoveDuplicateCharacters {
@@ -38,3 +40,34 @@ Output: automin
 ```
 
 This ensures that **each character appears only once** while keeping their original order. 
+
+
+*/
+
+
+
+// Approach 2 
+
+public class RemoveDuplicateCharacters {
+    public static void main(String[] args) {
+        String input = "automation";
+        String output = removeDuplicates(input);
+        System.out.println("Output: " + output); // Output: automin
+    }
+
+    public static String removeDuplicates(String input) {
+        StringBuilder result = new StringBuilder();
+
+        for (int i = 0; i < input.length(); i++) {
+            char currentChar = input.charAt(i);
+
+            // Check if current character is already in result
+            if (result.indexOf(String.valueOf(currentChar)) == -1) {
+                result.append(currentChar);
+            }
+        }
+
+        return result.toString();
+    }
+}
+
