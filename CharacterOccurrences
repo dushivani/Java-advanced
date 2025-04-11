@@ -1,0 +1,72 @@
+🔍 Java Program to Find Character Occurrence in a String
+
+Exploring one of the fundamental yet essential concepts in Java: counting the number of times each character appears in a string.
+
+💡 Here’s a Java snippet that prints the frequency of characters in a string:
+
+
+
+import java.util.HashMap;
+
+import java.util.Map;
+
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        String input = "hello";
+
+        char[] arr = input.toCharArray();
+
+        Map<Character, Integer> map = new HashMap<>();
+
+
+
+        for (char ch : arr) {
+
+            int count = 1;
+
+            if (map.containsKey(ch)) {
+
+                count = map.get(ch) + 1;
+
+            }
+
+            map.put(ch, count);
+
+        }
+
+
+
+        System.out.println(map);
+
+    }
+
+}
+
+
+
+✅ What this code does:
+
+Converts the input string into a character array.
+
+Uses a HashMap to store character frequencies.
+
+Updates the count each time a character appears again.
+
+
+
+🧠 Output for "hello":
+
+{h=1, e=1, l=2, o=1}
+
+
+
+🔧 A useful concept in:
+
+Log parsing 🧾
+
+Text analytics 📊
+
+Interview prep 💼
