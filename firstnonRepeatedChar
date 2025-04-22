@@ -1,0 +1,74 @@
+public class Main {
+    public static void main(String[] args) {
+        String input = "ABBACDCE";
+        char[] arr = input.toCharArray();
+
+        for (int i = 0; i < arr.length; i++) {
+            boolean flag = true;
+            for (int j = 0; j < arr.length; j++) {
+                if (i != j && arr[i] == arr[j]) {
+                    flag = false;
+                    break;
+                }
+            }
+            if (flag) {
+                System.out.println("First non repeated char in given string is : " + arr[i]);
+                break;
+            }
+        }
+    }
+}
+
+
+Awesome! I’ve extracted the code from your image. Here's the Java program you wrote:
+
+```java
+public class Main {
+    public static void main(String[] args) {
+        String input = "ABBACDCE";
+        char[] arr = input.toCharArray();
+
+        for (int i = 0; i < arr.length; i++) {
+            boolean flag = true;
+            for (int j = 0; j < arr.length; j++) {
+                if (i != j && arr[i] == arr[j]) {
+                    flag = false;
+                    break;
+                }
+            }
+            if (flag) {
+                System.out.println("First non repeated char in given string is : " + arr[i]);
+                break;
+            }
+        }
+    }
+}
+```
+
+---
+
+Now, here's a **LinkedIn-ready post** for this code:
+
+---
+
+🔍 **Finding the First Non-Repeated Character in a String – Java Edition**
+
+Ever been given a string and asked to find the *first unique character*?
+
+In this Java snippet, I loop through each character and check if it appears more than once. As soon as I find the first non-repeating character, I print it and break the loop.
+
+🧠 Simple logic, but powerful for string-based interview questions or real-world parsing tasks!
+
+📌 Example:
+```
+Input  : ABBACDCE  
+Output : D
+```
+
+Here’s a quick walkthrough:
+✅ Convert string to character array  
+✅ Loop through each character  
+✅ Use a nested loop to compare with others  
+✅ Stop at the first non-repeating character
+
+💡 Pro Tip: Want better performance? Try using a `LinkedHashMap` to track frequency and order in one go!
